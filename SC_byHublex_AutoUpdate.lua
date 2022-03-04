@@ -1,4 +1,4 @@
-API = gg.makeRequest('https://raw.githubusercontent.com/habib-nematulloev/SC_byHublex/main/SC_byHublex.lua').content
+API = gg.makeRequest('https://pastebin.com/raw/HM4EMcWs').content
 if not API then
   gg.alert('Error')
 else
