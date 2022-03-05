@@ -1,1 +1,0 @@
-gg.toast('load')
