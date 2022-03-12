@@ -45,7 +45,7 @@ function InfinityFly()
     gg.getResults(1000)
     gg.editAll("0.80",gg.TYPE_FLOAT)
     statusInfinityFly = off
-    gg.toast("Infinity Fly is "..statusInfinityFly)
+    gg.toast('Infinity Fly is '..statusInfinityFly)
   end
   gg.clearResults()
 end       
@@ -67,7 +67,7 @@ function CharacterGlow()
     gg.setVisible(false)
     gg.getResults(1000)
     gg.editAll("0.9", gg.TYPE_FLOAT)
-    statusCharacterGlow = on
+    statusCharacterGlow = off
     gg.toast('Glow is '..statusCharacterGlow)
   end
   gg.clearResults()
@@ -88,8 +88,8 @@ end
 --------------
 
 --=====Procedure=====--
-on = "[ON]"
-off = "[OFF]"
+on = '[ON]'
+off = '[OFF]'
 
 -----Flags-----
 statusInfinityFly = off
