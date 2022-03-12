@@ -1,5 +1,5 @@
 --API = gg.makeRequest('https://pastebin.com/raw/HM4EMcWs').content
-API = gg.makeRequest('https://raw.githubusercontent.com/habib-nematulloev/SCbyHublex/main/SCbyHublex.lua').content
+API = gg.makeRequest('https://raw.githubusercontent.com/Hublex01/SCbyHublex/main/SCbyHublex.lua').content
 print(API)
 if not API then
   gg.toast('oh no')
