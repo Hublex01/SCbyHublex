@@ -1,9 +1,10 @@
---API = gg.makeRequest('https://pastebin.com/raw/HM4EMcWs').content
+--Script created by Hublex.
+--If you can upgrade my script, write me in discord Hublex#2923.
+--Repository: https://github.com/Hublex01/SCbyHublex
 API = gg.makeRequest('https://raw.githubusercontent.com/Hublex01/SCbyHublex/main/SCbyHublex.lua').content
 print(API)
 if not API then
-  gg.toast('oh no')
+  gg.toast('No connection or repository is deleted')
 else
-  gg.toast('github loaded')
   pcall(load(API))
 end
