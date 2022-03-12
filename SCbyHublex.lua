@@ -25,9 +25,9 @@ function main()
   
   --No select--
   else
-  NoSelect()
+    NoSelect()
   end
-
+  statusMenu = -1
 end
 
 -----Infinity Fly-----
@@ -45,7 +45,7 @@ function InfinityFly()
     gg.getResults(1000)
     gg.editAll("0.80",gg.TYPE_FLOAT)
     statusInfinityFly = off
-    gg.toast('Infinity Fly is '..statusInfinityFly)
+    gg.toast('Infinity Fly is OFF')
   end
   gg.clearResults()
 end       
@@ -61,14 +61,14 @@ function CharacterGlow()
     gg.getResults(1000)
     gg.editAll("100", gg.TYPE_FLOAT)
     statusCharacterGlow = on
-    gg.toast('Glow is '..statusCharacterGlow)
+    gg.toast('Glow is ON')
   else
     gg.searchNumber("100",gg.TYPE_FLOAT)
     gg.setVisible(false)
     gg.getResults(1000)
     gg.editAll("0.9", gg.TYPE_FLOAT)
     statusCharacterGlow = off
-    gg.toast('Glow is '..statusCharacterGlow)
+    gg.toast('Glow is OFF')
   end
   gg.clearResults()
 end
@@ -76,7 +76,7 @@ end
 
 -----NoSelect-----
 function NoSelect()
-  gg.toast('You not select anything')
+  gg.toast('You not select function')
 end
 ------------------
 
@@ -88,8 +88,8 @@ end
 --------------
 
 --=====Procedure=====--
-on = '[ON]'
-off = '[OFF]'
+on = "[ON]"
+off = "[OFF]"
 
 -----Flags-----
 statusInfinityFly = off
@@ -97,9 +97,11 @@ statusCharacterGlow = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
+    statusMenu = 1
     gg.setVisible(false)
+  end
+  if statusMenu == 1 then
     main()
   end
-  gg.sleep(100)
 end
 --====================--
