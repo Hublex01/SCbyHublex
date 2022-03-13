@@ -93,6 +93,8 @@ end
 
 -----Light rays-----
 function LightRays()
+  gg.setRanges(gg.REGION_VIDEO)
+  gg.setVisible(false)
   gg.searchNumber("100",gg.TYPE_FLOAT)
   gg.setVisible(false)
   gg.getResults(1000)
@@ -116,8 +118,8 @@ end
 --------------
 
 --=====Procedure=====--
-on = "[ON]"
-off = "[OFF]"
+on = "🟩"
+off = "🟥"
 
 -----Flags-----
 statusInfinityFly = off
