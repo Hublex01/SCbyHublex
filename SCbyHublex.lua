@@ -65,15 +65,16 @@ function VisualFeatures()
    --Menu Visual Features--
   menuVF = gg.choice(
     {
-      "🌟Glow everybody",
-      "📀Light rays",
+      "⚠️🌟Glow everybody",
+      "⚠️📀Light rays",
       "🌫️Visual remove clouds - " .. statusVRemoveClouds,
-      "FOV Hack - " .. statusFovHack,
+      "🎥FOV Hack - " .. statusFovHack,
+      "🦋Big butterflies",
       "🔙Back"
     },nil,"☀️Visual features")
 
   --Back--
-  if menuVF == 5 then
+  if menuVF == 6 then
     main()
 
   --Glow Everybody--
@@ -91,6 +92,10 @@ function VisualFeatures()
   --FOV Hack--
   elseif menuVF == 4 then
     FOVHack()
+
+  --Big butterflies--
+  elseif menuVF == 5 then
+    BigButterflies()
   
   --No select--
   else
@@ -141,7 +146,7 @@ function LightRays()
   gg.setVisible(false)
   gg.getResults(1000)
   gg.editAll("0.9", gg.TYPE_FLOAT)
-  gg.toast('Light rays activated(for disable restart game)')
+  gg.toast('Light rays activated(for disable restart the game)')
   gg.clearResults()
 end
 ------------------------
@@ -189,6 +194,18 @@ function FOVHack()
     statusFovHack = off
   end
   gg.clearResults()
+end
+------------------------
+
+-----Big Butterflies-----
+function BigButterflies()
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.setVisible(false)
+  gg.searchNumber("0.12",gg.TYPE_FLOAT)
+  gg.getResults(200)
+  gg.editAll("1",gg.TYPE_FLOAT)
+  gg.clearResults()
+  gg.toast('Big Butterflies is activated(for disable restart the game)')
 end
 ------------------------
 
