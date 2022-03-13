@@ -2,7 +2,7 @@
 -----SC_byHublex-----
 ---------------------
 function main()
-  gg.toast('SC by Hublex is loaded')
+  gg.print('SC by Hublex is loaded')
   MainMenu()
 end
 
