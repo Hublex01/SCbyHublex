@@ -10,9 +10,9 @@ function MainMenu()
   --Menu--
   menu = gg.choice(
     {
-      statusInfinityFly .. "🌌Infinity fly🌌",
-      "☀️Visual features☀️",
-      "❌Exit from script❌"
+       "🌌Infinity fly - " .. statusInfinityFly,
+      "☀️Visual features",
+      "❌Exit from script"
     }, nil, "⛅SC by Hublex😎")
 
   --Exit--
@@ -41,9 +41,9 @@ function VisualFeatures()
    --Menu Visual Features--
   menuVF = gg.choice(
     {
-      "Glow everybody",
-      "Light rays",
-      "🔙Back🔙"
+      "🌟Glow everybody",
+      "📀Light rays",
+      "🔙Back"
     },nil,"")
 
   --Back--
