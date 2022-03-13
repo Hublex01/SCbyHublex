@@ -76,6 +76,7 @@ function VisualFeatures()
     {
       "⚠️🌟Glow everybody",
       "⚠️📀Light rays",
+      "🌙Night mode - " .. statusNightMode,
       "🌫️Visual remove clouds - " .. statusVRemoveClouds,
       "🎥FOV Hack - " .. statusFovHack,
       "🦋Big butterflies",
@@ -83,7 +84,7 @@ function VisualFeatures()
     },nil,"☀️Visual features")
 
   --Back--
-  if menuVF == 6 then
+  if menuVF == 7 then
     main()
 
   --Glow Everybody--
@@ -93,17 +94,21 @@ function VisualFeatures()
   --Light Rays--
   elseif menuVF == 2 then
     LightRays()
+
+  --Night mode--
+  elseif menuVF == 3 then
+    NightMode()
   
   --Visual Remove Clouds--
-  elseif menuVF == 3 then
+  elseif menuVF == 4 then
     VRemoveClouds()
 
   --FOV Hack--
-  elseif menuVF == 4 then
+  elseif menuVF == 5 then
     FOVHack()
 
   --Big butterflies--
-  elseif menuVF == 5 then
+  elseif menuVF == 6 then
     BigButterflies()
   
   --No select--
@@ -118,7 +123,7 @@ function TrollFeatures()
   --Menu Troll Features--
   menuTF = gg.choice(
   {
-    "Swim on land - " .. statusSwimOnLand,
+    "🏊‍♂️Swim on land - " .. statusSwimOnLand,
     "🔙Back"
   },nil,"Troll features")
 
@@ -201,6 +206,27 @@ function LightRays()
   gg.getResults(1000)
   gg.editAll("0.9", gg.TYPE_FLOAT)
   gg.toast('Light rays activated(for disable restart the game)')
+  gg.clearResults()
+end
+------------------------
+
+-----Night mode-----
+function NightMode()
+  gg.setRanges(gg.REGION_C_ALLOC)
+  gg.setVisible(false)
+  if statusNightMode == off
+    gg.searchNumber("0.1",gg.TYPE_FLOAT)
+    gg.getResults(500)
+    gg.editAll("550",gg.TYPE_FLOAT)
+    gg.toast('Night mode is activated')
+    statusNightMode = on
+  else
+    gg.searchNumber("550",gg.TYPE_FLOAT)
+    gg.getResults(500)
+    gg.editAll("0.1",gg.TYPE_FLOAT)
+    gg.toast('Night mode is disable')
+    statusNightMode = off
+  end
   gg.clearResults()
 end
 ------------------------
@@ -307,6 +333,7 @@ statusVRemoveClouds = off
 statusFovHack = off
 statusSwimOnLand = off
 statusInfinitySlide = off
+statusNightMode = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
