@@ -2,6 +2,11 @@
 -----SC_byHublex-----
 ---------------------
 function main()
+  MainMenu()
+end
+
+-----Main Menu------
+function MainMenu()
   --Menu--
   menu = gg.choice(
     {
@@ -29,7 +34,9 @@ function main()
   end
   statusMenu = -1
 end
+--------------------
 
+-----Visual Features-----
 function VisualFeatures()
    --Menu Visual Features--
   menuVF = gg.choice(
@@ -56,6 +63,7 @@ function VisualFeatures()
     NoSelect()
   end
 end
+--------------------------
 
 -----Infinity Fly-----
 function InfinityFly()
