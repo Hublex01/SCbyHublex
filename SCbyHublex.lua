@@ -12,7 +12,7 @@ function MainMenu()
     {
       "🌌Gameplay features",
       "☀️Visual features",
-      "Troll features",
+      "👺Troll features",
       "❌Exit from script"
     }, nil, "⛅SC by Hublex😎")
 
@@ -46,17 +46,22 @@ function GameplayFeatures()
   menuGF = gg.choice(
   {
     "♾️Infinity fly - " .. statusInfinityFly,
+    "♾️Infinity slide - " .. statusInfinitySlide,
     "🔙Back"
   },nil,"🌌Gameplay features")
 
   --Back--
-  if menuGF == 2 then
+  if menuGF == 3 then
     main()
 
   --Infinity Fly--
   elseif menuGF == 1 then
     InfinityFly()
- 
+  
+  --Infinity slide--
+  elseif menuGF == 2 then
+    InfinitySlide()
+
   --No select--
   else
     NoSelect()
@@ -148,6 +153,27 @@ function InfinityFly()
     gg.editAll("0.80",gg.TYPE_FLOAT)
     statusInfinityFly = off
     gg.toast('Infinity Fly is OFF')
+  end
+  gg.clearResults()
+end       
+--------------------------
+
+-----Infinity slide-----
+function InfinityFly()
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.setVisible(false)
+  if statusInfinitySlide == off then
+    gg.searchNumber("0.80",gg.TYPE_FLOAT)
+    gg.getResults(100)
+    gg.editAll("-0.75",gg.TYPE_FLOAT)
+    gg.toast('Infinity slide is activated')
+    statusInfinitySlide = on
+  else
+    gg.searchNumber("-0.75",gg.TYPE_FLOAT)
+    gg.getResults(1000)
+    gg.editAll("0.80",gg.TYPE_FLOAT)
+    gg.toast('Infinity slide is disable')
+    statusInfinitySlide = off
   end
   gg.clearResults()
 end       
@@ -280,6 +306,7 @@ statusInfinityFly = off
 statusVRemoveClouds = off
 statusFovHack = off
 statusSwimOnLand = off
+statusInfinitySlide = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
