@@ -325,8 +325,8 @@ end
 --------------
 
 --=====Procedure=====--
-on = '🟩'
-off = '🟥'
+on = "🟩"
+off = "🟥"
 
 -----Flags-----
 statusInfinityFly = off
