@@ -12,11 +12,12 @@ function MainMenu()
     {
       "🌌Gameplay features",
       "☀️Visual features",
+      "Troll features",
       "❌Exit from script"
     }, nil, "⛅SC by Hublex😎")
 
   --Exit--
-  if menu == 3 then
+  if menu == 4 then
     Exit()
     
   --Infinity Fly--
@@ -27,6 +28,9 @@ function MainMenu()
   elseif menu == 2 then
     VisualFeatures()
   
+  --Troll features--
+  elseif menu == 3 then
+    TrollFeatures()
   
   --No select--
   else
@@ -38,7 +42,7 @@ end
 
 -----Gameplay Features-----
 function GameplayFeatures()
-  --Menu Visual Features--
+  --Menu Gameplay Features--
   menuGF = gg.choice(
   {
     "♾️Infinity fly - " .. statusInfinityFly,
@@ -97,6 +101,30 @@ function VisualFeatures()
   elseif menuVF == 5 then
     BigButterflies()
   
+  --No select--
+  else
+    NoSelect()
+  end
+end
+--------------------------
+
+-----Troll Features-----
+function TrollFeatures()
+  --Menu Troll Features--
+  menuTF = gg.choice(
+  {
+    "Swim on land - " .. statusInfinityFly,
+    "🔙Back"
+  },nil,"Troll features")
+
+  --Back--
+  if menuTF == 2 then
+    main()
+
+  --Swim on land--
+  elseif menuTF == 1 then
+    SwimOnLand()
+ 
   --No select--
   else
     NoSelect()
@@ -209,6 +237,27 @@ function BigButterflies()
 end
 ------------------------
 
+-----Swim on land-----
+function SwimOnLand()
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.setVisible(false)
+  if statusSwimOnLand == off then
+    gg.searchNumber("0.60",gg.TYPE_FLOAT)
+    gg.getResults(1000)
+    gg.editAll("-0.1",gg.TYPE_FLOAT)
+    gg.toast('Swim on land is activated')
+    statusSwimOnLand = on
+  else
+    gg.searchNumber("-0.1",gg.TYPE_FLOAT)
+    gg.getResults(100)
+    gg.editAll("0.60",gg.TYPE_FLOAT)
+    gg.toast('Swim on land is disable')
+    statusSwimOnLand = off
+  end
+  gg.clearResults()
+end
+------------------------
+
 -----NoSelect-----
 function NoSelect()
   gg.toast('You not select function')
@@ -230,6 +279,7 @@ off = "🟥"
 statusInfinityFly = off
 statusVRemoveClouds = off
 statusFovHack = off
+statusSwimOnLand = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
