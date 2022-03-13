@@ -39,24 +39,24 @@ end
 -----Gameplay Features-----
 function GameplayFeatures()
   --Menu Visual Features--
- menuGF = gg.choice(
+  menuGF = gg.choice(
   {
     "♾️Infinity fly - " .. statusInfinityFly,
     "🔙Back"
-  },nil,"")
+  },nil,"🌌Gameplay features")
 
- --Back--
- if menuGF == 2 then
-   main()
+  --Back--
+  if menuGF == 2 then
+    main()
 
- --Infinity Fly--
+  --Infinity Fly--
   elseif menuGF == 1 then
     InfinityFly()
  
- --No select--
- else
-   NoSelect()
- end
+  --No select--
+  else
+    NoSelect()
+  end
 end
 --------------------------
 
@@ -69,7 +69,7 @@ function VisualFeatures()
       "📀Light rays",
       "🌫️Visual remove clouds - " .. statusVRemoveClouds,
       "🔙Back"
-    },nil,"")
+    },nil,"☀️Visual features")
 
   --Back--
   if menuVF == 4 then
