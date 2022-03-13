@@ -2,7 +2,6 @@
 -----SC_byHublex-----
 ---------------------
 function main()
-  gg.print('SC by Hublex is loaded')
   MainMenu()
 end
 
