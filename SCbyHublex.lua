@@ -113,7 +113,7 @@ function TrollFeatures()
   --Menu Troll Features--
   menuTF = gg.choice(
   {
-    "Swim on land - " .. statusInfinityFly,
+    "Swim on land - " .. statusSwimOnLand,
     "🔙Back"
   },nil,"Troll features")
 
