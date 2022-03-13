@@ -46,11 +46,11 @@ function GameplayFeatures()
   },nil,"")
 
  --Back--
- if menuVF == 2 then
+ if menuGF == 2 then
    main()
 
  --Infinity Fly--
-  elseif menuVF == 1 then
+  elseif menuGF == 1 then
     InfinityFly()
  
  --No select--
