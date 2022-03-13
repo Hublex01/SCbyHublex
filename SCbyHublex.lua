@@ -159,7 +159,7 @@ end
 --------------------------
 
 -----Infinity slide-----
-function InfinityFly()
+function InfinitySlide()
   gg.setRanges(gg.REGION_CODE_APP)
   gg.setVisible(false)
   if statusInfinitySlide == off then
