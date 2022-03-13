@@ -43,11 +43,12 @@ function VisualFeatures()
     {
       "🌟Glow everybody",
       "📀Light rays",
+      "🌫️Visual remove clouds - " .. statusVRemoveClouds,
       "🔙Back"
     },nil,"")
 
   --Back--
-  if menuVF == 3 then
+  if menuVF == 4 then
     main()
 
   --Glow Everybody--
@@ -57,6 +58,9 @@ function VisualFeatures()
   --Light Rays--
   elseif menuVF == 2 then
     LightRays()
+  
+  elseif menuVF == 3 then
+    VRemoveClouds()
   
   --No select--
   else
@@ -112,6 +116,29 @@ function LightRays()
 end
 ------------------------
 
+-----Visual Remove Clouds-----
+function VRemoveClouds()
+  gg.setRanges(gg.REGION_VIDEO)
+  gg.setVisible(false)
+  if statusVRemoveClouds == off then
+    gg.searchNumber("16",gg.TYPE_FLOAT)
+    gg.setVisible(false)
+    gg.getResults(1000)
+    gg.editAll("-15", gg.TYPE_FLOAT)
+    gg.toast('Visual remove clouds is activated')
+    statusVRemoveClouds = on
+  else
+    gg.searchNumber("-15",gg.TYPE_FLOAT)
+    gg.setVisible(false)
+    gg.getResults(1000)
+    gg.editAll("16", gg.TYPE_FLOAT)
+    gg.toast('Visual remove clouds is disabled')
+    statusVRemoveClouds = off
+  end
+  gg.clearResults()
+end
+------------------------
+
 -----NoSelect-----
 function NoSelect()
   gg.toast('You not select function')
@@ -131,6 +158,7 @@ off = "🟥"
 
 -----Flags-----
 statusInfinityFly = off
+statusVRemoveClouds = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
