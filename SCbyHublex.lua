@@ -10,7 +10,7 @@ function MainMenu()
   --Menu--
   menu = gg.choice(
     {
-       "🌌Infinity fly - " .. statusInfinityFly,
+      "🌌Gameplay features",
       "☀️Visual features",
       "❌Exit from script"
     }, nil, "⛅SC by Hublex😎")
@@ -21,7 +21,7 @@ function MainMenu()
     
   --Infinity Fly--
   elseif menu == 1 then
-    InfinityFly()
+    GameplayFeatures()
     
   --Visual features--
   elseif menu == 2 then
@@ -35,6 +35,30 @@ function MainMenu()
   statusMenu = -1
 end
 --------------------
+
+-----Gameplay Features-----
+function GameplayFeatures()
+  --Menu Visual Features--
+ menuGF = gg.choice(
+  {
+    "♾️Infinity fly - " .. statusInfinityFly,
+    "🔙Back"
+  },nil,"")
+
+ --Back--
+ if menuVF == 2 then
+   main()
+
+ --Infinity Fly--
+  elseif menuVF == 1 then
+    InfinityFly()
+ 
+ --No select--
+ else
+   NoSelect()
+ end
+end
+--------------------------
 
 -----Visual Features-----
 function VisualFeatures()
