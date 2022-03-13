@@ -68,11 +68,12 @@ function VisualFeatures()
       "🌟Glow everybody",
       "📀Light rays",
       "🌫️Visual remove clouds - " .. statusVRemoveClouds,
+      "FOV Hack - " .. statusFovHack,
       "🔙Back"
     },nil,"☀️Visual features")
 
   --Back--
-  if menuVF == 4 then
+  if menuVF == 5 then
     main()
 
   --Glow Everybody--
@@ -83,8 +84,13 @@ function VisualFeatures()
   elseif menuVF == 2 then
     LightRays()
   
+  --Visual Remove Clouds--
   elseif menuVF == 3 then
     VRemoveClouds()
+
+  --FOV Hack--
+  elseif menuVF == 4 then
+    FOVHack()
   
   --No select--
   else
@@ -163,6 +169,29 @@ function VRemoveClouds()
 end
 ------------------------
 
+-----FOV Hack-----
+function FOVHack()
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.setVisible(false)
+  if statusFovHack == off then
+    gg.searchNumber("0.3",gg.TYPE_FLOAT)
+    gg.setVisible(false)
+    gg.getResults(1000)
+    gg.editAll("0.1", gg.TYPE_FLOAT)
+    gg.toast('FOV Hack is activated')
+    statusFovHack = on
+  else
+    gg.searchNumber("0.1",gg.TYPE_FLOAT)
+    gg.setVisible(false)
+    gg.getResults(1000)
+    gg.editAll("0.3", gg.TYPE_FLOAT)
+    gg.toast('FOV Hack is disabled')
+    statusFovHack = off
+  end
+  gg.clearResults()
+end
+------------------------
+
 -----NoSelect-----
 function NoSelect()
   gg.toast('You not select function')
@@ -183,6 +212,7 @@ off = "🟥"
 -----Flags-----
 statusInfinityFly = off
 statusVRemoveClouds = off
+statusFovHack = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
