@@ -5,10 +5,10 @@ function main()
   --Menu--
   menu = gg.choice(
     {
-    statusInfinityFly .. "Infinity Fly",
-    statusCharacterGlow .. "Character Glow",
-    "Exit"
-    }, nil, "SCbyHublex")
+      statusInfinityFly .. "🌌Infinity fly🌌",
+      "☀️Visual features☀️",
+      "❌Exit from script❌"
+    }, nil, "⛅SC by Hublex😎")
 
   --Exit--
   if menu == 3 then
@@ -18,9 +18,9 @@ function main()
   elseif menu == 1 then
     InfinityFly()
     
-  --Character Glow--
+  --Visual features--
   elseif menu == 2 then
-    CharacterGlow()
+    VisualFeatures()
   
   
   --No select--
@@ -28,6 +28,33 @@ function main()
     NoSelect()
   end
   statusMenu = -1
+end
+
+function VisualFeatures()
+   --Menu Visual Features--
+  menuVF = gg.choice(
+    {
+      "Glow everybody",
+      "Light rays",
+      "🔙Back🔙"
+    },nil,"")
+
+  --Back--
+  if menuVF == 3 then
+    main()
+
+  --Glow Everybody--
+  elseif menuVF == 1 then
+    GlowEverybody()
+  
+  --Light Rays--
+  elseif menuVF == 2 then
+    LightRays()
+  
+  --No select--
+  else
+    NoSelect()
+  end
 end
 
 -----Infinity Fly-----
@@ -51,25 +78,26 @@ function InfinityFly()
 end       
 --------------------------
 
------Character Glow-----
-function CharacterGlow()
+-----Glow Everybody-----
+function GlowEverybody()
   gg.setRanges(gg.REGION_VIDEO)
   gg.setVisible(false)
-  if statusCharacterGlow == off then
-    gg.searchNumber("0.9",gg.TYPE_FLOAT)
-    gg.setVisible(false)
-    gg.getResults(1000)
-    gg.editAll("100", gg.TYPE_FLOAT)
-    statusCharacterGlow = on
-    gg.toast('Glow is ON')
-  else
-    gg.searchNumber("100",gg.TYPE_FLOAT)
-    gg.setVisible(false)
-    gg.getResults(1000)
-    gg.editAll("0.9", gg.TYPE_FLOAT)
-    statusCharacterGlow = off
-    gg.toast('Glow is OFF')
-  end
+  gg.searchNumber("0.9",gg.TYPE_FLOAT)
+  gg.setVisible(false)
+  gg.getResults(1000)
+  gg.editAll("100", gg.TYPE_FLOAT)
+  gg.toast('Glow activated(for disable go home)')
+  gg.clearResults()
+end
+------------------------
+
+-----Light rays-----
+function LightRays()
+  gg.searchNumber("100",gg.TYPE_FLOAT)
+  gg.setVisible(false)
+  gg.getResults(1000)
+  gg.editAll("0.9", gg.TYPE_FLOAT)
+  gg.toast('Light rays activated(for disable restart game)')
   gg.clearResults()
 end
 ------------------------
@@ -93,7 +121,6 @@ off = "[OFF]"
 
 -----Flags-----
 statusInfinityFly = off
-statusCharacterGlow = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
