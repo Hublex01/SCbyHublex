@@ -79,11 +79,12 @@ function VisualFeatures()
       "🌫️Visual remove clouds - " .. statusVRemoveClouds,
       "🎥FOV Hack - " .. statusFovHack,
       "🦋Big butterflies",
+      "🌙Night mode - " .. statusNightMode,
       "🔙Back"
     },nil,"☀️Visual features")
 
   --Back--
-  if menuVF == 6 then
+  if menuVF == 7 then
     main()
 
   --Glow Everybody--
@@ -106,6 +107,10 @@ function VisualFeatures()
   elseif menuVF == 5 then
     BigButterflies()
   
+  --Night mode--
+  elseif menuVF == 6 then
+    NightMode()
+
   --No select--
   else
     NoSelect()
@@ -263,6 +268,25 @@ function BigButterflies()
 end
 ------------------------
 
+-----Night mode-----
+function NightMode()
+  gg.setRanges(gg.REGION_C_ALLOC)
+  gg.setVisible(false)
+  if statusNightMode == off
+    gg.searchNumber("0.1",gg.TYPE_FLOAT)
+    gg.getResults(500)
+    gg.editAll("550",gg.TYPE_FLOAT)
+  else
+    gg.setRanges(gg.REGION_C_ALLOC)
+    gg.setVisible(false)
+    gg.searchNumber("550",gg.TYPE_FLOAT)
+    gg.getResults(500)
+    gg.editAll("0.1",gg.TYPE_FLOAT)
+  end
+  gg.clearResults()
+end
+------------------------
+
 -----Swim on land-----
 function SwimOnLand()
   gg.setRanges(gg.REGION_CODE_APP)
@@ -307,6 +331,7 @@ statusVRemoveClouds = off
 statusFovHack = off
 statusSwimOnLand = off
 statusInfinitySlide = off
+statusNightMode = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
