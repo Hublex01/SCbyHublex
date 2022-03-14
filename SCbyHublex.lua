@@ -47,11 +47,12 @@ function GameplayFeatures()
   {
     "♾️Infinity fly - " .. statusInfinityFly,
     "♾️Infinity slide - " .. statusInfinitySlide,
+    "Max level wings - " .. statusMaxWings,
     "🔙Back"
   },nil,"🌌Gameplay features")
 
   --Back--
-  if menuGF == 3 then
+  if menuGF == 4 then
     main()
 
   --Infinity Fly--
@@ -61,6 +62,10 @@ function GameplayFeatures()
   --Infinity slide--
   elseif menuGF == 2 then
     InfinitySlide()
+
+  --Max wings--
+  elseif menuGF == 3 then
+    MaxWings()
 
   --No select--
   else
@@ -179,6 +184,44 @@ function InfinitySlide()
     gg.editAll("0.80",gg.TYPE_FLOAT)
     gg.toast('Infinity slide is disable')
     statusInfinitySlide = off
+  end
+  gg.clearResults()
+end       
+--------------------------
+
+-----Max wings-----
+function MaxWings()
+  gg.setRanges(gg.REGION_CODE_APP)
+  gg.searchNumber('1D;2D;5D;10D;20D;35D;55D;75D;100D;120D;150D;200D;250D;300D;400D::57', gg.TYPE_DWORD)
+  wnglv = gg.getResults(14)
+  gg.clearResults()
+  gg.toast('wing level ready')
+  revertwnglv = {}
+  for i, v in ipairs(wnglv) do
+    revertwnglv[i] = {address = v.address, flags = v.flags, value = v.value}
+  end
+  if statusMaxWings == off then
+    maxlvwing = on
+      wnglv[1].value = '0'
+      wnglv[2].value = '0'
+      wnglv[3].value = '0'
+      wnglv[4].value = '0'
+      wnglv[5].value = '0'
+      wnglv[6].value = '0'
+      wnglv[7].value = '0'
+      wnglv[8].value = '0'
+      wnglv[9].value = '0'
+      wnglv[10].value = '0'
+      wnglv[11].value = '0'
+      wnglv[12].value = '0'
+      wnglv[13].value = '0'
+      wnglv[14].value = '0'
+      gg.setValues(wnglv)
+      gg.toast('Wing level activated')
+  else
+    maxlvwing = off
+    gg.setValues(revertwnglv)
+    gg.toast('Wing level deactivated')
   end
   gg.clearResults()
 end       
@@ -334,6 +377,7 @@ statusFovHack = off
 statusSwimOnLand = off
 statusInfinitySlide = off
 statusEclipse = off
+statusMaxWings = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
