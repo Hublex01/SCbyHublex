@@ -79,7 +79,7 @@ function VisualFeatures()
       "🌫️Visual remove clouds - " .. statusVRemoveClouds,
       "🎥FOV Hack - " .. statusFovHack,
       "🦋Big butterflies",
-      "🌙Night mode - " .. statusNightMode,
+      "🌙Eclipse - " .. statusEclipse,
       "🔙Back"
     },nil,"☀️Visual features")
 
@@ -109,7 +109,7 @@ function VisualFeatures()
   
   --Night mode--
   elseif menuVF == 6 then
-    NightMode()
+    Eclipse()
 
   --No select--
   else
@@ -267,26 +267,28 @@ function BigButterflies()
   gg.toast('Big Butterflies is activated(for disable restart the game)')
 end
 ------------------------
---[[
------Night mode-----
-function NightMode()
+
+-----Eclipse-----
+function Eclipse()
   gg.setRanges(gg.REGION_C_ALLOC)
   gg.setVisible(false)
-  if statusNightMode == off
+  if statusEclipse == off then
     gg.searchNumber("0.1",gg.TYPE_FLOAT)
     gg.getResults(500)
     gg.editAll("550",gg.TYPE_FLOAT)
+    gg.toast('Eclipse is activated')
+    statusEclipse = on
   else
-    gg.setRanges(gg.REGION_C_ALLOC)
-    gg.setVisible(false)
     gg.searchNumber("550",gg.TYPE_FLOAT)
     gg.getResults(500)
     gg.editAll("0.1",gg.TYPE_FLOAT)
+    gg.toast('Eclipse is disable')
+    statusEclipse = off
   end
   gg.clearResults()
 end
 ------------------------
-]]--
+
 -----Swim on land-----
 function SwimOnLand()
   gg.setRanges(gg.REGION_CODE_APP)
@@ -331,7 +333,7 @@ statusVRemoveClouds = off
 statusFovHack = off
 statusSwimOnLand = off
 statusInfinitySlide = off
-statusNightMode = off
+statusEclipse = off
 ---------------
 while (true) do
   if gg.isVisible(true) then
