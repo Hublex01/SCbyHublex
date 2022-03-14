@@ -190,16 +190,15 @@ end
 --------------------------
 
 -----Max wings-----
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber('1D;2D;5D;10D;20D;35D;55D;75D;100D;120D;150D;200D;250D;300D;400D::57', gg.TYPE_DWORD)
+wnglv = gg.getResults(14)
+gg.clearResults()
+revertwnglv = {}
+for i, v in ipairs(wnglv) do
+  revertwnglv[i] = {address = v.address, flags = v.flags, value = v.value}
+end
 function MaxWings()
-  gg.setRanges(gg.REGION_CODE_APP)
-  gg.searchNumber('1D;2D;5D;10D;20D;35D;55D;75D;100D;120D;150D;200D;250D;300D;400D::57', gg.TYPE_DWORD)
-  wnglv = gg.getResults(14)
-  gg.clearResults()
-  gg.toast('wing level ready')
-  revertwnglv = {}
-  for i, v in ipairs(wnglv) do
-    revertwnglv[i] = {address = v.address, flags = v.flags, value = v.value}
-  end
   if statusMaxWings == off then
     statusMaxWings = on
       wnglv[1].value = '0'
