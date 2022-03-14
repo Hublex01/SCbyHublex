@@ -201,7 +201,7 @@ function MaxWings()
     revertwnglv[i] = {address = v.address, flags = v.flags, value = v.value}
   end
   if statusMaxWings == off then
-    maxlvwing = on
+    statusMaxWings = on
       wnglv[1].value = '0'
       wnglv[2].value = '0'
       wnglv[3].value = '0'
@@ -219,7 +219,7 @@ function MaxWings()
       gg.setValues(wnglv)
       gg.toast('Wing level activated')
   else
-    maxlvwing = off
+    statusMaxWings = off
     gg.setValues(revertwnglv)
     gg.toast('Wing level deactivated')
   end
