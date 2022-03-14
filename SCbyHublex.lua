@@ -267,7 +267,7 @@ function BigButterflies()
   gg.toast('Big Butterflies is activated(for disable restart the game)')
 end
 ------------------------
-
+--[[
 -----Night mode-----
 function NightMode()
   gg.setRanges(gg.REGION_C_ALLOC)
@@ -286,7 +286,7 @@ function NightMode()
   gg.clearResults()
 end
 ------------------------
-
+]]--
 -----Swim on land-----
 function SwimOnLand()
   gg.setRanges(gg.REGION_CODE_APP)
