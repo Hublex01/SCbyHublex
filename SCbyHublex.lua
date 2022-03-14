@@ -193,35 +193,23 @@ end
 function MaxWings()
   gg.setRanges(gg.REGION_CODE_APP)
   gg.searchNumber('1D;2D;5D;10D;20D;35D;55D;75D;100D;120D;150D;200D;250D;300D;400D::57', gg.TYPE_DWORD)
-  wnglv = gg.getResults(14)
-  gg.clearResults()
+  wingLevel = gg.getResults(14)
   gg.toast('wing level ready')
-  revertwnglv = {}
-  for i, v in ipairs(wnglv) do
-    revertwnglv[i] = {address = v.address, flags = v.flags, value = v.value}
+  revertwingLevel = {}
+  for i, v in ipairs(wingLevel) do
+    revertwingLevel[i] = {address = v.address, flags = v.flags, value = v.value}
   end
   if statusMaxWings == off then
-    maxlvwing = on
-      wnglv[1].value = '0'
-      wnglv[2].value = '0'
-      wnglv[3].value = '0'
-      wnglv[4].value = '0'
-      wnglv[5].value = '0'
-      wnglv[6].value = '0'
-      wnglv[7].value = '0'
-      wnglv[8].value = '0'
-      wnglv[9].value = '0'
-      wnglv[10].value = '0'
-      wnglv[11].value = '0'
-      wnglv[12].value = '0'
-      wnglv[13].value = '0'
-      wnglv[14].value = '0'
-      gg.setValues(wnglv)
-      gg.toast('Wing level activated')
+    for i = 1, 14 do
+      wingLevel[i].value = '0'
+    end
+    gg.setValues(wingLevel)
+    gg.toast('Max level wings is activated')
+    statusMaxWings = on
   else
-    maxlvwing = off
-    gg.setValues(revertwnglv)
-    gg.toast('Wing level deactivated')
+    gg.setValues(revertwingLevel)
+    gg.toast('Max level wings is disable')
+    statusMaxWings = off
   end
   gg.clearResults()
 end       
