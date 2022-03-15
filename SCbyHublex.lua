@@ -47,7 +47,7 @@ function GameplayFeatures()
   {
     "♾️Infinity fly - " .. statusInfinityFly,
     "♾️Infinity slide - " .. statusInfinitySlide,
-    "Max level wings - " .. statusMaxWings,
+    "🛫Max level wings - " .. statusMaxWings,
     "🔙Back"
   },nil,"🌌Gameplay features")
 
@@ -128,7 +128,7 @@ function TrollFeatures()
   --Menu Troll Features--
   menuTF = gg.choice(
   {
-    "Swim on land - " .. statusSwimOnLand,
+    "🏊‍♂️Swim on land - " .. statusSwimOnLand,
     "🔙Back"
   },nil,"Troll features")
 
