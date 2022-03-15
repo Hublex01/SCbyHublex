@@ -47,7 +47,7 @@ function GameplayFeatures()
   {
     "♾️Infinity fly - " .. statusInfinityFly,
     "♾️Infinity slide - " .. statusInfinitySlide,
-    "Max level wings - " .. statusMaxWings,
+    "🛫Max level wings - " .. statusMaxWings,
     "🔙Back"
   },nil,"🌌Gameplay features")
 
