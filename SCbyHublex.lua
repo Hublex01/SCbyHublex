@@ -13,12 +13,11 @@ function MainMenu()
       "🌌Gameplay features",
       "☀️Visual features",
       "👺Troll features",
-      "Test",
       "❌Exit from script"
     }, nil, "⛅SC by Hublex😎")
 
   --Exit--
-  if menu == 5 then
+  if menu == 4 then
     Exit()
     
   --Infinity Fly--
@@ -32,10 +31,6 @@ function MainMenu()
   --Troll features--
   elseif menu == 3 then
     TrollFeatures()
-
-  --Troll features--
-  elseif menu == 4 then
-  gg.toast("rabotay")
   
   --No select--
   else
